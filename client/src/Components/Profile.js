@@ -1,10 +1,7 @@
 import React from 'react';
-// import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import '../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css';
 import './Profile.css';
-// import ReactTable from "react-table";
-
 
 class Profile extends React.Component{
   constructor(props){
@@ -19,8 +16,6 @@ class Profile extends React.Component{
   componentDidMount(){
         this.loadActivities();
         this.interval = setInterval(() => this.loadActivities(), 3000);
-        //this.interval = setInterval(() => this.handleUvBarClick(), 1000);
-  
         fetch('https://aqueous-forest-79868.herokuapp.com/loadhistory', {
         method: 'post',
         headers: {'Content-Type' : 'application/json'},
@@ -30,8 +25,6 @@ class Profile extends React.Component{
     }) 
     .then(response => response.json())
         .then(data => {
-          //console.log(data);
-          //this.printHistory(data);
           this.setState({
             data: data
           })  
@@ -56,7 +49,6 @@ class Profile extends React.Component{
   }
 
   loadActivityTable(){
-      console.log("reached in activity table");
       if(this.state.activity === null){
       return( <div> Loading... </div>);
     }
@@ -89,9 +81,7 @@ class Profile extends React.Component{
   
 
   handleUvBarClick(activity){
-    console.log("reached click handler");
     const activity_name = activity.activity;
-    console.log("checking state",activity_name);
     if(activity_name === 'Ask_question Clicked'){
           fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
@@ -105,12 +95,10 @@ class Profile extends React.Component{
           this.setState({
             activity_visualized: activity
           })
-          console.log("activities", this.state.activity_visualized);
-         })   
+                   })   
     }
 
     else if(activity_name === 'Scrolled'){
-        console.log("reached in elseif");
           fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
@@ -123,8 +111,7 @@ class Profile extends React.Component{
           this.setState({
             activity_visualized: activity
           })
-          console.log("activities", activity);
-         }) 
+                   }) 
     }
     else if(activity_name === 'Search box clicked'){
         fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
@@ -139,11 +126,9 @@ class Profile extends React.Component{
           this.setState({
             activity_visualized: activity
           })
-          console.log("activities", activity);
-         }) 
+          }) 
     }
     else if(activity_name === 'Key pressed'){
-      console.log("reached key pressed");
         fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
@@ -156,12 +141,10 @@ class Profile extends React.Component{
           this.setState({
             activity_visualized: activity
           })
-          console.log("activities", activity);
-         }) 
+                   }) 
     }
 
     else if(activity_name === 'Clicked "Votes"'){
-      console.log("reached key pressed");
         fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
@@ -174,8 +157,7 @@ class Profile extends React.Component{
           this.setState({
             activity_visualized: activity
           })
-          console.log("activities", activity);
-         }) 
+                   }) 
     }    
   }
 
@@ -270,7 +252,7 @@ class Profile extends React.Component{
           {this.constructBarChart()}
           {this.constructAnotherBarChart()}
           <div className = "logActions">
-            <h2> Why did you decide to log these actions? </h2>
+            <h1> Why did you decide to log these actions? </h1>
             <p> I have logged 5 user actions. Those actions are </p> 
                 <p> 1) Scrolling to the bottom of the page activity: I decided to log the scroll activity as it depicts the user's behavior
                     searching some answer. If a user scrolls to the bottom of the page, it shows that the user is searching for an answer 
@@ -289,6 +271,25 @@ class Profile extends React.Component{
                 <p> 5) Ask Question button clicked: This action is to show that user has not got answers anywhere on the web. He wants to rely
                         on StackOver Flow to get his answer. His clicking on ask question means that he is willing to post his question online
                         and get help from other community people.</p>
+            </div>
+            <div className = "logActions">
+            <h1> Analysis and Findings </h1>
+            <ul>
+            <li> The pattern that I found with my actions is, once a user reaches stack overflow website, it means that
+            the user is looking for answers on the website </li>
+            <li> He tries to search the question by looking at the list of the questions on the main page and when he is not
+            able to find it on the main page, he reached to the bottom of the page </li>
+            <li> When he is not able to find the question on the main page, he tries to look at the question with the most votes
+            by clicking the votes link and hoping to find it answer in the most voted answers. </li>
+            <li> After not finding it in most voted answers, he tries to search it in whole website by clicking on the search
+            bar and pressing a key to type something. </li>
+            <li> If at last he is does not get satisfactory search results, he decides to ask question, post it online and 
+            get answers from online community. </li>
+            </ul>
+            <p> The basic pattern is of a user trying to search an answer to a question, first looking at all the 
+            questions on the main page(scroll activity), then trying to find in list of most voted answers(clicked on votes),
+            then searching for the question(clicking on search bar and pressing keys on the keyboard) and when not finding answer 
+            from any other methods, user ask question(clicking on ask question) and post it online. </p> 
             </div>                      
     	</div>
 			);

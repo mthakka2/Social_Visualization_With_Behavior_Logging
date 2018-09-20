@@ -19,12 +19,10 @@ table tr { border-bottom: 1px solid #000; }
 table th { border-top: 1px solid #000; }
 
 .headingProfile{
-  /*text-align: center;
-  */padding-left: 70px;
+  padding-left: 70px;
   margin-top: 60px;
   font-size: 35px;
   color: white;
-  /*color: #795092;*/
 }
 
 .link{
@@ -36,17 +34,13 @@ table th { border-top: 1px solid #000; }
 
 .historyTable{
   margin-top: 50px;
-  font-size: 15px;
-    /*color:white;*/
-/*  color: #795092;
-*/  
+  font-size: 15px;  
     color: #30195C;
     text-decoration: underline; 
 }
 
 .dataHeading{
   font-size: 23px;
-  /*color: #795092;*/
   color: #30195C;
   text-decoration: underline;  
 }
@@ -54,9 +48,7 @@ table th { border-top: 1px solid #000; }
 .h6Heading{ 
   margin-bottom: 0px;
   font-size: 25px;
-  /*color: #795092;*/
   color: #30195C;
-  /*text-decoration: underline;  */
 }
 
 .logActions{

@@ -23,7 +23,6 @@ class App extends Component {
  }
 
   printHistory = (data) => {
-    console.log("reached print history");
     this.setState({data1 : {
       id: data.id,
       username: data.name,

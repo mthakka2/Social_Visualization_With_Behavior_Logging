@@ -20,7 +20,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/apitesting/:event/:token", (req,res) => {
-	console.log(req.params.event);
 	const event = req.params.event;
 	const username = req.params.token;
 	const time = moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -94,7 +93,6 @@ app.post ('/getActivity_AskButton', (req,res) => {
 	db.select('username', 'count', 'time').from('activities')
 	.where('activity', '=', activity)	
 	.then(activity => {
-		console.log("Sending these activities", activity);
 		res.json(activity);
 	})
 })
