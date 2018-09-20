@@ -290,6 +290,10 @@ class Profile extends React.Component{
             questions on the main page(scroll activity), then trying to find in list of most voted answers(clicked on votes),
             then searching for the question(clicking on search bar and pressing keys on the keyboard) and when not finding answer 
             from any other methods, user ask question(clicking on ask question) and post it online. </p> 
+            <p> I tried to look at the user perspective for using stack overflow. After working on stack over flow with user's 
+            perspective, I find out the difficulties that can be caused if an answer cannot be found easily and that lead to 
+            finding the pattern and the activities. It matters to build a user profile, by looking at user's specific activities
+            it can help build user profile easily. So for building user profile, it is important to find patterns in activities.</p>
             </div>                      
     	</div>
 			);
