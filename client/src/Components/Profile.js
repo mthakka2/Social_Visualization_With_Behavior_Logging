@@ -21,7 +21,7 @@ class Profile extends React.Component{
         this.interval = setInterval(() => this.loadActivities(), 3000);
         //this.interval = setInterval(() => this.handleUvBarClick(), 1000);
   
-        fetch('http://localhost:3000/loadhistory', {
+        fetch('https://aqueous-forest-79868.herokuapp.com/loadhistory', {
         method: 'post',
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({
@@ -39,7 +39,7 @@ class Profile extends React.Component{
       }  
       
   loadActivities(){
-    fetch('http://localhost:3000/getActivities', {
+    fetch('https://aqueous-forest-79868.herokuapp.com/getActivities', {
       method: 'post',
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify({
@@ -93,7 +93,7 @@ class Profile extends React.Component{
     const activity_name = activity.activity;
     console.log("checking state",activity_name);
     if(activity_name === 'Ask_question Clicked'){
-          fetch('http://localhost:3000/getActivity_AskButton', {
+          fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
@@ -111,7 +111,7 @@ class Profile extends React.Component{
 
     else if(activity_name === 'Scrolled'){
         console.log("reached in elseif");
-          fetch('http://localhost:3000/getActivity_AskButton', {
+          fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
@@ -127,7 +127,7 @@ class Profile extends React.Component{
          }) 
     }
     else if(activity_name === 'Search box clicked'){
-        fetch('http://localhost:3000/getActivity_AskButton', {
+        fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
@@ -144,7 +144,7 @@ class Profile extends React.Component{
     }
     else if(activity_name === 'Key pressed'){
       console.log("reached key pressed");
-        fetch('http://localhost:3000/getActivity_AskButton', {
+        fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({
@@ -162,7 +162,7 @@ class Profile extends React.Component{
 
     else if(activity_name === 'Clicked "Votes"'){
       console.log("reached key pressed");
-        fetch('http://localhost:3000/getActivity_AskButton', {
+        fetch('https://aqueous-forest-79868.herokuapp.com/getActivity_AskButton', {
           method: 'post',
           headers: {'Content-Type' : 'application/json'},
           body: JSON.stringify({

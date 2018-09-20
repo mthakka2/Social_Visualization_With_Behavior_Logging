@@ -12,7 +12,7 @@ class Nav extends React.Component {
 		// var tempDate = new Date();
   // 		var date = tempDate.getFullYear() + '-' + (tempDate.getMonth()+1) + '-' + tempDate.getDate() +' '+ tempDate.getHours()+':'+ tempDate.getMinutes()+':'+ tempDate.getSeconds();
   // 		const currDate = date;
-  		fetch('http://localhost:3000/history1', {
+  		fetch('https://aqueous-forest-79868.herokuapp.com/history1', {
 	      method: 'post',
 	      headers: {'Content-Type' : 'application/json'},
 	      body: JSON.stringify({
