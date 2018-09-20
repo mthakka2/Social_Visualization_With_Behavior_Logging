@@ -289,8 +289,7 @@ class Profile extends React.Component{
                 <p> 5) Ask Question button clicked: This action is to show that user has not got answers anywhere on the web. He wants to rely
                         on StackOver Flow to get his answer. His clicking on ask question means that he is willing to post his question online
                         and get help from other community people.</p>
-            </div>                       
-          </div>
+            </div>                      
     	</div>
 			);
 	}
