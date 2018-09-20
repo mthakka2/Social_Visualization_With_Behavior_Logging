@@ -58,3 +58,8 @@ table th { border-top: 1px solid #000; }
   color: #30195C;
   /*text-decoration: underline;  */
 }
+
+.logActions{
+  text-align: left;
+  color: #30195C;
+}

@@ -269,8 +269,8 @@ class Profile extends React.Component{
           </div>
           {this.constructBarChart()}
           {this.constructAnotherBarChart()}
-          <div>
-            <h3> Why did you decide to log these actions? </h3>
+          <div className = "logActions">
+            <h2> Why did you decide to log these actions? </h2>
             <p> I have logged 5 user actions. Those actions are </p> 
                 <p> 1) Scrolling to the bottom of the page activity: I decided to log the scroll activity as it depicts the user's behavior
                     searching some answer. If a user scrolls to the bottom of the page, it shows that the user is searching for an answer 
