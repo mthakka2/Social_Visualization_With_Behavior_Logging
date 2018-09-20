@@ -269,6 +269,28 @@ class Profile extends React.Component{
           </div>
           {this.constructBarChart()}
           {this.constructAnotherBarChart()}
+          <div>
+            <h3> Why did you decide to log these actions? </h3>
+            <p> I have logged 5 user actions. Those actions are </p> 
+                <p> 1) Scrolling to the bottom of the page activity: I decided to log the scroll activity as it depicts the user's behavior
+                    searching some answer. If a user scrolls to the bottom of the page, it shows that the user is searching for an answer 
+                    and he is not able to find it on the top of the page adn ends up looking at the bottom of the page. </p>
+                <p> 2) Search input box clicked: This activity shows that the user has not been able to find the answer to the 
+                        question he is looking for in main page and he is deciding to search the question in the input box of search bar.
+                        Searching shows him not able to find the questions in the main page and it also shows that maybe he is not looking
+                        answers for JAVA but he is lookign for some other technology. </p>
+                <p> 3) Key on keyboard pressed: This action depicts that user is searching for a particular keyword. If he tries to search 
+                        something particular in search bar, it will show his willingness to find something. He can also press a key 
+                        while finding a particular keyword from the whole page which is by doing (CTRL - F). This action shoes user's
+                        continuation of searching something.</p>
+                <p> 4) Clicked Votes: This action shows how the user is interested in just looking at the most popular answers. This can
+                        mean that user knows some question but he wants to know that if his question has answers with highest votes. He may
+                        also be interested in the people who have got the highest votes and wants to see if he can answer better than other.</p>
+                <p> 5) Ask Question button clicked: This action is to show that user has not got answers anywhere on the web. He wants to rely
+                        on StackOver Flow to get his answer. His clicking on ask question means that he is willing to post his question online
+                        and get help from other community people.</p>
+            </div>                       
+          </div>
     	</div>
 			);
 	}
