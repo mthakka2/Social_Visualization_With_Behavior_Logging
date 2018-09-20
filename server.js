@@ -178,6 +178,15 @@ app.post('/register', (req,res) => {
 	.catch(err => res.status(400).json("not register"))
 	})
 
+if(process.env.NODE_ENV === "production"){
+	const path = require("path");
+	app.use(express.static(path.join(_dirname, "/client/build")));
+
+	app.get("*", (req,res) => {
+		res.sendFile(path.resolve(_dirname, "client", "build", "index.html"));
+	})
+}
+
 app.listen(process.env.PORT || 3000, () => {
 	console.log(`app is running on port ${process.env.PORT}`);
 })
