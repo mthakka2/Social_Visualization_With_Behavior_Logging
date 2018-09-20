@@ -9,7 +9,7 @@ const moment = require('moment');
 const db = knex({
 	client: 'pg',
 	connection: {
-		host: '127.0.0.1',
+		host: 'postgresql-octagonal-45621',
 		user: 'postgres',
 		password: 'amoi9825049931',
 		database: 'aw'
