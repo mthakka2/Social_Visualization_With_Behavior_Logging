@@ -55,9 +55,9 @@ app.post("/apitesting/:event/:token", (req,res) => {
 	})
 
 
-app.get('/', (req,res) => {
-	res.send('it is working!');
-})
+// app.get('/', (req,res) => {
+// 	res.send('it is working!');
+// })
 
 app.post ('/signin', (req,res) => {
 	const {username, password} = req.body;
